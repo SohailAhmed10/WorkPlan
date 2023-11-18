@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <title>Work Plan</title>
+</head>
+<body>
+    <h2 class="heading">Work Plan</h2>
+    <div id="list">
+        <ul>
+            <% for (var i = 0; i<worklist.length; i++) { %>
+                <li>
+                    <form action="/editwork/<%= worklist[i].title %>" method="get">
+                        <a href="/work/<%= worklist[i].title %>">   <%= worklist[i].title %>, Due: <%=worklist[i].duedate%> </a>
+                        <button id="button-edit" type="submit">Edit</button>
+                    </form>
+                </li>
+            <% } %>
+        </ul>
+    </div>
+    <div>
+        <form action="/" method="post">
+            <button type="submit">Add More Work</button>
+        </form>
+    </div>
+    
+</body>
+</html>

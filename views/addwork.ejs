@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/style/style.css" rel="stylesheet" type="text/css">
+    <title>Work Plan</title>
+</head>
+<body>
+    <h2 class="heading">Work Plan</h2>
+    <div>
+        <form action="/addwork" method="post">
+            <%if (found_same_title == true) {%>
+                <p>you alread have a work with title <%= worktitle%></p>
+            <%}%>
+            <input type="text" name="worktitle" placeholder="Work Title" required>
+            <br>
+            <textarea type="text" name="description" placeholder="Add Details" rows="6" cols="60" maxlength="500"></textarea>
+            <br>
+            <label for="duedate">Due Date: </label>
+            <input type="date" id="duedate" name="duedate" min="<%=min_date%>">
+            <br>
+            <button type="submit">Add Work</button>
+        </form>
+    </div>
+    
+</body>
+</html>
